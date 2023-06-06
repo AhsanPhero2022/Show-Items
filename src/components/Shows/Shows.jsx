@@ -10,9 +10,13 @@ const Shows = () => {
       .then((data) => setShows(data));
   }, []);
 
+  // const handleClick = () => {
+  //   console.log("yes clicked");
+  // };
+
   return (
     <div>
-      <h1 className="text-center m-4">Choose your item</h1>
+      <h1 className="text-center m-4">All Show Items</h1>
       <div className="w-50 text-center mx-auto ">
         {shows.map((showItem) => (
           <ShowsCard key={showItem.show.id} showItem={showItem}></ShowsCard>

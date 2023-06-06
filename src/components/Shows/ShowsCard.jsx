@@ -1,13 +1,16 @@
 import { Button, CardGroup } from "react-bootstrap";
 
 import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 const ShowsCard = ({ showItem }) => {
   const {
-    show: { summary, name, id, image },
+    score,
+
+    show: { id, name, image, averageRuntime, status },
   } = showItem;
 
-  console.log(name);
+  console.log(status);
   return (
     <CardGroup>
       <Card className="my-2">
@@ -19,9 +22,15 @@ const ShowsCard = ({ showItem }) => {
         <Card.Body>
           <Card.Title>Show Name: {name}</Card.Title>
           <Card.Text>
-            <p>{summary}</p>
+            <div className="d-flex justify-content-evenly my-3">
+              <p>Score: {score}</p>
+              <p>Run time: {averageRuntime}</p>
+              <p>Status: {status}</p>
+            </div>
           </Card.Text>
-          <Button variant="warning">Warning</Button>
+          <Link to={`/dynamicItem/${id}`}>
+            <Button variant="warning">More Info</Button>
+          </Link>
         </Card.Body>
         <Card.Footer>
           <small className="text-muted">Last updated 3 mins ago</small>
