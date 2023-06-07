@@ -5,6 +5,7 @@ import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./components/Home/Home.jsx";
 import DynamicItem from "./components/DynamicItem/DynamicItem.jsx";
+import TicketBookingForm from "./components/Shows/TicketBookingForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/dynamicItem/:id",
         element: <DynamicItem></DynamicItem>,
+        loader: ({ params }) =>
+          fetch(`https://api.tvmaze.com/shows/${params.id}`),
+      },
+      {
+        path: "/ticketBookingForm/:id",
+        element: <TicketBookingForm></TicketBookingForm>,
         loader: ({ params }) =>
           fetch(`https://api.tvmaze.com/shows/${params.id}`),
       },

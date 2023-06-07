@@ -10,7 +10,6 @@ const ShowsCard = ({ showItem }) => {
     show: { id, name, image, averageRuntime, status },
   } = showItem;
 
-  console.log(status);
   return (
     <CardGroup>
       <Card className="my-2">

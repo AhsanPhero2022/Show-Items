@@ -15,9 +15,12 @@ const DynamicItem = () => {
         <Card.Body>
           <Card.Title>{data.name}</Card.Title>
           <Card.Text>{data.summary}</Card.Text>
-          <div className="text-center mt-5">
+          <div className=" mt-5 d-flex justify-content-between">
             <Link to="/">
-              <Button variant="success">Back to Home</Button>
+              <Button variant="warning">Back to Home</Button>
+            </Link>
+            <Link to={`/ticketBookingForm/${data.id}`}>
+              <Button variant="success">Ticket Booking</Button>
             </Link>
           </div>
         </Card.Body>

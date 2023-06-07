@@ -3,7 +3,7 @@ import ShowsCard from "./ShowsCard";
 
 const Shows = () => {
   const [shows, setShows] = useState([]);
-  console.log(shows);
+
   useEffect(() => {
     fetch("https://api.tvmaze.com/search/shows?q=all")
       .then((res) => res.json())
